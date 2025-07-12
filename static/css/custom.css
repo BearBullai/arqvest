@@ -1,0 +1,413 @@
+/* Custom styles for Arqvest - Architecting your investments - Elegant & Premium Theme */
+
+/* CSS Custom Properties for the new color scheme */
+:root {
+    --primary-purple: #4B0082;
+    --secondary-gold: #D4AF37;
+    --background-off-white: #FAF9F6;
+    --text-rich-black: #0D0D0D;
+    --purple-light: #6A0DAD;
+    --purple-dark: #2D0040;
+    --gold-light: #E6C200;
+    --gold-dark: #B8941F;
+    --text-muted: #666666;
+    --border-color: #E0E0E0;
+    --shadow-color: rgba(75, 0, 130, 0.1);
+}
+
+/* Global body styling */
+body {
+    background-color: var(--background-off-white);
+    color: var(--text-rich-black);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+.navbar-dark {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-dark)) !important;
+    border-bottom: 2px solid var(--secondary-gold);
+}
+
+.navbar-brand {
+    color: var(--secondary-gold) !important;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.navbar-brand:hover {
+    color: var(--gold-light) !important;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background: linear-gradient(180deg, var(--primary-purple), var(--purple-light)) !important;
+    box-shadow: 2px 0 10px rgba(75, 0, 130, 0.2);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 8px;
+    margin: 2px 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(212, 175, 55, 0.2) !important;
+    color: var(--secondary-gold) !important;
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(90deg, var(--secondary-gold), var(--gold-light)) !important;
+    color: var(--primary-purple) !important;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+.sidebar-heading {
+    color: var(--secondary-gold) !important;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 8px;
+}
+
+/* Dashboard cards */
+.dashboard-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    height: 100%;
+    border-left: 4px solid var(--primary-purple);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(75, 0, 130, 0.2);
+    border-left-color: var(--secondary-gold);
+}
+
+.dashboard-card .card-header {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    color: white;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+}
+
+.dashboard-card .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.dashboard-card .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-purple);
+}
+
+/* Performance indicators */
+.positive {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.negative {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.neutral {
+    color: var(--secondary-gold);
+    font-weight: 600;
+}
+
+/* Chart containers */
+.chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.risk-chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+/* Main content area */
+.main-content {
+    padding-top: 2rem;
+    background-color: var(--background-off-white);
+}
+
+/* Table styles */
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.table th {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 15px;
+}
+
+.table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(75, 0, 130, 0.05);
+}
+
+/* Custom badge styling */
+.badge-asset {
+    font-size: 0.75rem;
+    padding: 0.5em 0.8em;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Asset class colors */
+.asset-Stock {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    color: white;
+}
+
+.asset-ETF {
+    background: linear-gradient(135deg, #17a2b8, #20c997);
+    color: white;
+}
+
+.asset-Bonds, .asset-Government-Bonds, .asset-Corporate-Bonds, .asset-Municipal-Bonds {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.asset-Cash {
+    background: linear-gradient(135deg, var(--secondary-gold), var(--gold-light));
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.asset-Cryptocurrency {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+    color: white;
+}
+
+.asset-Real-Estate {
+    background: linear-gradient(135deg, #6f42c1, #e83e8c);
+    color: white;
+}
+
+.asset-Commodity {
+    background: linear-gradient(135deg, #fd7e14, #ffc107);
+    color: white;
+}
+
+.asset-Other {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+/* Risk level indicators */
+.risk-Very-Low {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+}
+
+.risk-Low {
+    background: linear-gradient(135deg, #17a2b8, #20c997);
+    color: white;
+}
+
+.risk-Moderate, .risk-Medium {
+    background: linear-gradient(135deg, var(--secondary-gold), var(--gold-light));
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.risk-Medium-High, .risk-High {
+    background: linear-gradient(135deg, #fd7e14, #ffc107);
+    color: white;
+}
+
+.risk-Very-High {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+    color: white;
+}
+
+/* Form styling */
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 0.2rem rgba(75, 0, 130, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--primary-purple);
+    margin-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--purple-dark), var(--primary-purple));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(75, 0, 130, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-gold), var(--gold-light));
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    color: var(--primary-purple);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--gold-dark), var(--secondary-gold));
+    color: var(--primary-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 12px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border-left: 4px solid var(--secondary-gold);
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+/* Modal styling */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(75, 0, 130, 0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        padding-top: 1rem;
+    }
+
+    .sidebar-sticky {
+        height: auto;
+    }
+
+    .main-content {
+        padding-top: 1rem;
+    }
+
+    .chart-container,
+    .risk-chart-container {
+        height: 250px;
+    }
+}
+
+/* Add some padding to the page bottom */
+.pb-6 {
+    padding-bottom: 4rem !important;
+}
+
+/* Tooltips */
+.tooltip-inner {
+    max-width: 300px;
+    background: var(--primary-purple);
+    border-radius: 8px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-purple), var(--purple-light));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--purple-dark), var(--primary-purple));
+}

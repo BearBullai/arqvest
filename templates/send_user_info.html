@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block title %}Send User Information{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-users me-2"></i>
+                        Send User Information
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% if show_data %}
+                        <!-- Show user data on page -->
+                        <div class="alert alert-info">
+                            <h5 class="alert-heading">
+                                <i class="fas fa-info-circle me-2"></i>
+                                User Information Display
+                            </h5>
+                            <p class="mb-0">
+                                Email is not configured. Showing user data on this page instead.
+                            </p>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Registration Date</th>
+                                        <th>Last Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td>{{ user.id }}</td>
+                                            <td>{{ user.name }}</td>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.phone or 'N/A' }}</td>
+                                            <td>{{ user.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                            <td>{{ user.updated_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="6" class="text-center">No users found</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="alert alert-success">
+                            <strong>Total Users:</strong> {{ user_count }}
+                        </div>
+                        
+                        <a href="{{ url_for('index') }}" class="btn btn-primary">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            Back to Dashboard
+                        </a>
+                    {% else %}
+                        <!-- Normal confirmation page -->
+                        <div class="alert alert-info">
+                            <h5 class="alert-heading">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Confirmation Required
+                            </h5>
+                            <p class="mb-0">
+                                You are about to send all registered user information to <strong>bearbullai01@gmail.com</strong>.
+                            </p>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <h3 class="text-primary">{{ user_count }}</h3>
+                                        <p class="mb-0">Total Registered Users</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <h3 class="text-success">bearbullai01@gmail.com</h3>
+                                        <p class="mb-0">Recipient Email</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-warning">
+                            <h6 class="alert-heading">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Information to be sent:
+                            </h6>
+                            <ul class="mb-0">
+                                <li>User ID</li>
+                                <li>Full Name</li>
+                                <li>Email Address</li>
+                                <li>Phone Number</li>
+                                <li>Registration Date</li>
+                                <li>Last Updated Date</li>
+                            </ul>
+                        </div>
+                        
+                        <form method="POST" class="d-inline">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Send User Information
+                            </button>
+                        </form>
+                        
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            Cancel
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
